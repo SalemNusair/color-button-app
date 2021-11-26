@@ -15,7 +15,7 @@ function App() {
       <input
         type="checkbox"
         onChange={(e) => setDisabled(e.target.checked)}
-        onClick={() => setDisabled(!disabled)}></input>
+        ></input>
     </div>
   );
 }

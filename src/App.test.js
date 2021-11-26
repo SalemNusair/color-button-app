@@ -29,15 +29,10 @@ test("intial check", () => {
 
 test("test checkbox", () => {
   render(<App />);
-  const buttonColor = screen.getByRole("button", { name: "change to blue" });
-  // default it will be enabled
-  expect(buttonColor).toBeEnabled();
+  const buttonColor = screen.getByRole("button");
   const checbox = screen.getByRole("checkbox");
-  // default value disabled
-  expect(checbox).not.toBeChecked();
-  // when click the checkbox, the button should be disable
-  fireEvent.click(checbox);
 
+  fireEvent.click(checbox);
   expect(checbox).toBeChecked();
   expect(buttonColor).toBeDisabled();
 });
