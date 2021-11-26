@@ -30,9 +30,14 @@ test("intial check", () => {
 test("test checkbox", () => {
   render(<App />);
   const buttonColor = screen.getByRole("button");
-  const checbox = screen.getByRole("checkbox",{name:"Disable button"});
-
-  fireEvent.click(checbox);
-  expect(checbox).toBeChecked();
+  const checkcbox = screen.getByRole("checkbox",{name:"Disable button"});
+  
+// change color to gray when checked
+  fireEvent.click(checkcbox);
+  expect(buttonColor).toHaveStyle({backgroundColor:"gray"});
+  expect(checkcbox).toBeChecked();
   expect(buttonColor).toBeDisabled();
+// re-checked to red
+  fireEvent.click(checkcbox);
+  expect(buttonColor).toHaveStyle({backgroundColor:"red"});
 });
