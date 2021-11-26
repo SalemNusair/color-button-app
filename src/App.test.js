@@ -30,7 +30,7 @@ test("intial check", () => {
 test("test checkbox", () => {
   render(<App />);
   const buttonColor = screen.getByRole("button");
-  const checbox = screen.getByRole("checkbox");
+  const checbox = screen.getByRole("checkbox",{name:"Disable button"});
 
   fireEvent.click(checbox);
   expect(checbox).toBeChecked();
