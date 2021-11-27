@@ -51,6 +51,8 @@ expect(replaceCamelCaseWithSpaces("Red")).toBe("Red");
     expect(replaceCamelCaseWithSpaces("RedBlue")).toBe("Red Blue");
   });
   test("works for multiple camel case",()=>{
-    expect(replaceCamelCaseWithSpaces("RedBlueGreen")).toBe("Red Blue Green");
+    expect(replaceCamelCaseWithSpaces("RedBlueGreen")).toBe("Red Green");
   });
 })
+
+

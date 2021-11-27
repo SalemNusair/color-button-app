@@ -1,7 +1,13 @@
 import { useState } from "react";
 
-export function replaceCamelCaseWithSpaces(colorName){
-return colorName.replace(/\B([A-Z])\B/g," $1");
+export function replaceCamelCaseWithSpaces(colorName) {
+  let replace = colorName.replace(/\B([A-Z])\B/g, " $1");
+  return replace.split(" ").length < 3
+    ? replace
+    : replace
+        .split(" ")
+        .filter((a, i) => i != 1)
+        .join(" ");
 }
 function App() {
   const [buttonColor, setButtonColor] = useState("red");
