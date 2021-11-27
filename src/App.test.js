@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import App from "./App";
+import {replaceCamelCaseWithSpaces} from"./App";
 
 test("Button has correct initial color", () => {
   // to render the App component
@@ -41,3 +42,17 @@ test("test checkbox", () => {
   fireEvent.click(checkcbox);
   expect(buttonColor).toHaveStyle({backgroundColor:"red"});
 });
+
+describe("replace camel case with space test",()=>{
+  test("work with no inner camel case",()=>{
+expect(replaceCamelCaseWithSpaces("Red")).toBe("Red");
+  });
+  test("Work for one inner camel case",()=>{
+    expect(replaceCamelCaseWithSpaces("RedBlue")).toBe("Red Blue");
+  });
+  test("works for multiple camel case",()=>{
+    expect(replaceCamelCaseWithSpaces("RedBlueGreen")).toBe("Red Green");
+  });
+})
+
+
